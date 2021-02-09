@@ -5,6 +5,12 @@ if !has('nvim')
     finish
 endif
 
+if hlexists("Cursor")
+	highlight default link TabiIndent Cursor
+else
+	highlight default TabiIndent guibg=white
+endif
+
 function! tabi#toggle()
 	lua require("tabi").toggle()
 endfunction
